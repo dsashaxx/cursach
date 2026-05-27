@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поставщики - Склад деталей ПК</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Складской учет деталей для ПК</h1>
+        <nav id="nav"></nav>
+    </header>
+    
+    <main>
+        <section class="card">
+            <h2>Поставщики</h2>
+            <div class="toolbar admin-only" style="display:none">
+                <button id="add-btn">Добавить поставщика</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Телефон</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="suppliers-tbody"></tbody>
+            </table>
+        </section>
+        
+        <dialog id="form-dialog">
+            <form id="supplier-form">
+                <h3 id="form-title">Новый поставщик</h3>
+                <input type="hidden" id="supplier-id">
+                
+                <label>
+                    Название:
+                    <input type="text" id="supplier-name" required maxlength="128">
+                </label>
+                
+                <label>
+                    Телефон:
+                    <input type="text" id="supplier-phone" maxlength="32">
+                </label>
+                
+                <label>
+                    Email:
+                    <input type="email" id="supplier-email" maxlength="128">
+                </label>
+                
+                <label>
+                    Адрес:
+                    <input type="text" id="supplier-address" maxlength="255">
+                </label>
+                
+                <p id="form-msg" class="error"></p>
+                
+                <div class="toolbar">
+                    <button type="submit">Сохранить</button>
+                    <button type="button" id="cancel-btn">Отмена</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+
+</body>
+</html>

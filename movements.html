@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Движения - Склад деталей ПК</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Складской учет деталей для ПК</h1>
+        <nav id="nav"></nav>
+    </header>
+    
+    <main>
+        <section class="card">
+            <h2>Движения товара</h2>
+            <div class="toolbar admin-only" style="display:none">
+                <button id="add-btn">Добавить операцию</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Деталь</th>
+                        <th>Склад</th>
+                        <th>Тип</th>
+                        <th>Количество</th>
+                        <th>Дата</th>
+                        <th>Комментарий</th>
+                    </tr>
+                </thead>
+                <tbody id="movements-tbody"></tbody>
+            </table>
+        </section>
+        
+        <dialog id="form-dialog">
+            <form id="movement-form">
+                <h3 id="form-title">Новая операция</h3>
+                
+                <label>
+                    Деталь:
+                    <select id="part-id" required>
+                        <option value="">—</option>
+                    </select>
+                </label>
+                
+                <label>
+                    Склад:
+                    <select id="warehouse-id" required>
+                        <option value="">—</option>
+                    </select>
+                </label>
+                
+                <label>
+                    Тип операции:
+                    <select id="movement-type" required>
+                        <option value="IN">Приход</option>
+                        <option value="OUT">Расход</option>
+                    </select>
+                </label>
+                
+                <label>
+                    Количество:
+                    <input type="number" id="quantity" min="1" required>
+                </label>
+                
+                <label>
+                    Комментарий:
+                    <textarea id="comment" rows="2"></textarea>
+                </label>
+                
+                <p id="form-msg" class="error"></p>
+                
+                <div class="toolbar">
+                    <button type="submit">Сохранить</button>
+                    <button type="button" id="cancel-btn">Отмена</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+    
+</body>
+</html>
