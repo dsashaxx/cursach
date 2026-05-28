@@ -2,45 +2,66 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход - Склад деталей ПК</title>
+    <title>Вход</title>
     <link rel="stylesheet" href="style.css">
+    <script src="login.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Складской учет деталей для ПК</h1>
-    </header>
-    
-    <main>
-        <section class="card">
-            <h2>Вход в систему</h2>
+
+<header>
+    <h1>Складской учет деталей ПК</h1>
+</header>
+
+<main>
+    <div class="auth-box">
+
+        <div class="auth-buttons">
+            <button type="button" id="login-tab">Вход</button>
+            <button type="button" id="register-tab">Регистрация</button>
+        </div>
+
+        <div id="login-section">
+            <h2>Вход</h2>
+
             <form id="login-form">
                 <label>
-                    Имя пользователя:
+                    Логин
                     <input type="text" id="username" required>
                 </label>
+
                 <label>
-                    Пароль:
+                    Пароль
                     <input type="password" id="password" required>
                 </label>
+
                 <p id="error-msg" class="error"></p>
+
                 <button type="submit">Войти</button>
             </form>
-            
-            <h3>Регистрация нового пользователя</h3>
+        </div>
+
+        <div id="register-section" class="hidden">
+            <h2>Регистрация</h2>
+
             <form id="register-form">
                 <label>
-                    Имя пользователя:
+                    Логин
                     <input type="text" id="reg-username" required>
                 </label>
+
                 <label>
-                    Пароль:
+                    Пароль
                     <input type="password" id="reg-password" required>
                 </label>
-                <p id="reg-msg"></p>
+
+                <p id="reg-msg" class="error"></p>
+
                 <button type="submit">Зарегистрироваться</button>
             </form>
-        </section>
-    </main>
+        </div>
+
+    </div>
+</main>
+
 </body>
 </html>

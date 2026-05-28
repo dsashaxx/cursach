@@ -1,195 +1,133 @@
-
-* { box-sizing: border-box; }
-body { 
-    margin: 0; 
-    font-family: 'Segoe UI', Arial, sans-serif; 
-    background: #f5f7fa; 
-    color: #333; 
-    line-height: 1.5;
+* {
+    box-sizing: border-box;
 }
-header { 
-    background: #243650; 
-    color: white; 
-    padding: 12px 24px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    position: sticky; /* Шапка прилипает к верху */
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef6ff;
+    color: #3b4d66;
 }
-
-header h1 { 
-    font-size: 18px; 
-    margin: 0; 
-    font-weight: 600; 
+header {
+    background: #cfe8ff;
+    padding: 15px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+nav {
+    margin-top: 10px;
 }
 
-/* Навигация */
-nav { display: flex; gap: 15px; align-items: center; }
-nav a { 
-    color: rgba(255,255,255,0.9); 
-    text-decoration: none; 
-    padding: 6px 10px; 
-    border-radius: 4px;
-    transition: background 0.2s;
+nav a {
+    text-decoration: none;
+    color: #3b4d66;
+    margin: 0 10px;
     font-size: 14px;
 }
-nav a:hover { 
-    background: rgba(255,255,255,0.15); 
-    color: #fff; 
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
-nav button {
-    background: #d63031; /* Красная кнопка выхода */
-    border: none;
+.card {
+    background: white;
+    border: 1px solid #cfe0f5;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
 }
-
-/* Основной контейнер */
-main { 
-    max-width: 1200px; 
-    margin: 30px auto; 
-    padding: 0 20px; 
-}
-
-/* Карточки */
-.card { 
-    background: white; 
-    padding: 30px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-    margin-bottom: 20px;
+h2 {
+    text-align: center;
+    color: #4b6fa3;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
-/* Заголовки */
-h2 { margin-top: 0; color: #243650; font-size: 22px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
-h3 { margin-top: 0; color: #2c3e50; font-size: 18px; margin-bottom: 15px;}
-
-/* Формы и инпуты */
-form { display: flex; flex-direction: column; gap: 15px; }
-label { 
-    display: flex; 
-    flex-direction: column; 
-    font-weight: 500; 
-    font-size: 14px; 
-    color: #555;
+h3 {
+    color: #4b6fa3;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+label {
+    display: flex;
+    flex-direction: column;
     gap: 5px;
 }
-input, select, textarea { 
-    width: 100%; 
-    padding: 10px; 
-    border: 1px solid #ced4da; 
-    border-radius: 4px; 
-    font-size: 14px;
-    transition: border-color 0.2s;
+input,
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #bdd7f2;
+    border-radius: 6px;
 }
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #243650;
-    box-shadow: 0 0 0 3px rgba(36, 54, 80, 0.1);
+button {
+    background: #b7dcff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
 }
-textarea { resize: vertical; }
-
-/* Кнопки */
-button, .btn { 
-    cursor: pointer; 
-    border: none; 
-    padding: 10px 16px; 
-    border-radius: 4px; 
-    font-size: 14px; 
-    font-weight: 500;
-    transition: opacity 0.2s;
+button:hover {
+    background: #9ecfff;
 }
-button:hover { opacity: 0.9; }
-
-/* Основная кнопка (submit) */
-button[type="submit"] { 
-    background: #243650; 
-    color: white; 
-    align-self: flex-start;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th,
+td {
+    border: 1px solid #d7e7f7;
+    padding: 10px;
 }
 
-/* Кнопка отмены */
-button[type="button"] {
-    background: #fff;
-    border: 1px solid #ced4da;
-    color: #555;
+th {
+    background: #dff0ff;
 }
-
-/* Опасные действия (удаление) */
-.danger { 
-    background: #e74c3c; 
-    color: white; 
+dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
 }
-.danger:hover { background: #c0392b; }
-
-/* Таблицы */
-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    margin-top: 20px; 
+.error {
+    color: #d9534f;
+}
+.auth-box {
+    max-width: 400px;
+    margin: 80px auto;
     background: white;
-    border: 1px solid #eee;
-}
-th, td { 
-    padding: 12px 15px; 
-    text-align: left; 
-    border-bottom: 1px solid #eee; 
-}
-th { 
-    background: #f8f9fa; 
-    font-weight: 600; 
-    color: #495057; 
-    position: sticky;
-    top: 0;
-}
-tr:hover { background-color: #fafafa; } /* Подсветка строки */
-
-/* Диалоговые окна (Modal) */
-dialog { 
-    border: none; 
-    padding: 0; 
-    width: min(600px, 90vw); 
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    overflow: hidden;
-}
-dialog::backdrop {
-    background: rgba(0,0,0,0.5); /* Затемнение фона */
-}
-dialog form {
     padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfe0f5;
+    text-align: center;
 }
-dialog h3 {
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
     margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
 }
 
-/* Утилиты */
-.toolbar { display: flex; gap: 10px; margin: 15px 0; flex-wrap: wrap;}
-.row-actions { white-space: nowrap; display: flex; gap: 8px;}
-.row-actions button { padding: 6px 12px; font-size: 13px; }
-.msg, .error { color: #e74c3c; font-size: 13px; min-height: 18px; margin: 0; }
-.admin-only { display: none; } /* Скрыто для обычных пользователей */
-
-/* Авторизация (Login page) */
-.auth-container {
-    max-width: 800px;
-    margin: 60px auto;
+.auth-buttons button {
+    flex: 1;
 }
-.auth-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-.login-box { padding: 20px; background: #f8f9fa; border-radius: 6px; }
 
-/* Адаптивность */
+.hidden {
+    display: none;
+}
 @media (max-width: 768px) {
-    header { flex-direction: column; align-items: stretch; gap: 15px; }
-    nav { justify-content: center; flex-wrap: wrap; }
-    .auth-grid { grid-template-columns: 1fr; gap: 20px; }
-    .toolbar { flex-direction: column; }
-    button, .btn { width: 100%; }
+
+    header {
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
 }
