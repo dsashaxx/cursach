@@ -5,129 +5,204 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #eef6ff;
-    color: #3b4d66;
+    color: #4a5c74;
 }
 header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100vh;
     background: #cfe8ff;
-    padding: 15px;
-    text-align: center;
+    padding: 20px;
 }
 header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-nav {
-    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #4a5c74;
 }
 
-nav a {
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+nav a,
+nav button {
+    padding: 10px;
     text-decoration: none;
-    color: #3b4d66;
-    margin: 0 10px;
-    font-size: 14px;
+    background: white;
+    color: #4a5c74;
+    border: 1px solid #b8d7f2;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+nav a:hover,
+nav button:hover {
+    background: #e7f3ff;
 }
 main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin-left: 250px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
 }
 .card {
+    width: 900px;
     background: white;
-    border: 1px solid #cfe0f5;
+    border: 1px solid #d7e6f5;
     border-radius: 10px;
     padding: 30px;
     text-align: center;
 }
 h2 {
     text-align: center;
-    color: #4b6fa3;
-    margin-top: 0;
-    margin-bottom: 25px;
+    color: #5b7cab;
+    font-size: 28px;
 }
-
 h3 {
-    color: #4b6fa3;
+    color: #5b7cab;
 }
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 label {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-align: left;
 }
 input,
 select,
 textarea {
     padding: 10px;
-    border: 1px solid #bdd7f2;
+    border: 1px solid #c7dcef;
     border-radius: 6px;
+    font-size: 14px;
 }
 button {
-    background: #b7dcff;
-    border: none;
-    padding: 10px 15px;
+    padding: 10px;
+    background: #cfe8ff;
+    color: #4a5c74;
+    border: 1px solid #b8d7f2;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 15px;
 }
 button:hover {
-    background: #9ecfff;
+    background: #bfe0ff;
+}
+.danger {
+    background: #ffd6d6;
 }
 table {
     width: 100%;
     border-collapse: collapse;
+    background: white;
     margin-top: 20px;
 }
 th,
 td {
-    border: 1px solid #d7e7f7;
     padding: 10px;
+    border: 1px solid #d7e6f5;
 }
-
 th {
     background: #dff0ff;
 }
-dialog {
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
+.toolbar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+.row-actions {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
 }
 .error {
-    color: #d9534f;
+    color: #d63031;
+    min-height: 18px;
 }
 .auth-box {
-    max-width: 400px;
-    margin: 80px auto;
+    max-width: 500px;
+    margin: 60px auto;
     background: white;
     padding: 30px;
+    border: 1px solid #d7e6f5;
     border-radius: 10px;
-    border: 1px solid #cfe0f5;
-    text-align: center;
 }
-
+.login-page main {
+    margin-left: 0;
+    display: block;
+}
 .auth-buttons {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
-
-.auth-buttons button {
-    flex: 1;
-}
-
 .hidden {
     display: none;
 }
+.hint {
+    font-size: 13px;
+    color: #6b7c93;
+}
+dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    width: min(600px, 90vw);
+}
+.catalog {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product {
+    width: 220px;
+    padding: 15px;
+    background: #f7fbff;
+    border: 1px solid #d7e6f5;
+    border-radius: 10px;
+    text-align: center;
+}
+.product img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    background: #eaf5ff;
+    border-radius: 8px;
+}
+.product button {
+    width: 100%;
+    margin-top: 10px;
+}
+#total {
+    text-align: center;
+    margin-top: 20px;
+}
 @media (max-width: 768px) {
-
     header {
-        text-align: center;
+        position: static;
+        width: 100%;
+        height: auto;
     }
 
-    nav a {
-        display: block;
-        margin: 5px 0;
+    main {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .card {
+        width: 100%;
     }
 }

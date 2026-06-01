@@ -1,0 +1,4 @@
+2026-06-01 12:16:26 | ip:::1 | login:user | action:LOGOUT
+2026-06-01 12:16:57 | ip:::1 | login:admin | action:LOGIN
+2026-06-01 13:56:20 | ip:::1 | login:admin | action:LOGOUT
+2026-06-01 14:02:19 | ip:::1 | login:user | action:LOGIN
